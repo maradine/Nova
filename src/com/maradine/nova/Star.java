@@ -6,33 +6,21 @@ package com.maradine.nova;
 public class Star {
 
     //starting mineral concentrations of intrinsic planet
-    private final Float startingMineralOneConcentration;
-    private final Float startingMineralTwoConcentration;
-    private final Float startingMineralThreeConcentration;
+    private final double startingMineralOneConcentration;
+    private final double startingMineralTwoConcentration;
+    private final double startingMineralThreeConcentration;
 
     //current mineral concentrations of intrinsic planet
-    private Float mineralOneConcentration;
-    private Float mineralTwoConcentration;
-    private Float mineralThreeConcentration;
+    private double mineralOneConcentration;
+    private double mineralTwoConcentration;
+    private double mineralThreeConcentration;
 
     //surface minerals on on intrinsic planet
-    private Float mineralOneSurface;
-    private Float mineralTwoSurface;
-    private Float mineralThreeSurface;
+    private double mineralOneSurface;
+    private double mineralTwoSurface;
+    private double mineralThreeSurface;
 
-    public Star(Float mineralThreeConcentration, Float startingMineralOneConcentration, Float startingMineralTwoConcentration, Float startingMineralThreeConcentration, Float mineralOneConcentration, Float mineralTwoConcentration) {
-        this.startingMineralOneConcentration = startingMineralOneConcentration;
-        this.startingMineralTwoConcentration = startingMineralTwoConcentration;
-        this.startingMineralThreeConcentration = startingMineralThreeConcentration;
-        this.mineralOneConcentration = mineralOneConcentration;
-        this.mineralTwoConcentration = mineralTwoConcentration;
-        this.mineralThreeConcentration = mineralThreeConcentration;
-        this.mineralOneSurface = 0f;
-        this.mineralTwoSurface = 0f;
-        this.mineralThreeSurface = 0f;
-    }
-
-    public Star(Float mineralThreeSurface, Float startingMineralOneConcentration, Float startingMineralTwoConcentration, Float startingMineralThreeConcentration, Float mineralOneConcentration, Float mineralTwoConcentration, Float mineralThreeConcentration, Float mineralOneSurface, Float mineralTwoSurface) {
+    public Star(double startingMineralOneConcentration, double startingMineralTwoConcentration, double startingMineralThreeConcentration, double mineralOneConcentration, double mineralTwoConcentration, double mineralThreeConcentration, double mineralOneSurface, double mineralTwoSurface, double mineralThreeSurface) {
         this.startingMineralOneConcentration = startingMineralOneConcentration;
         this.startingMineralTwoConcentration = startingMineralTwoConcentration;
         this.startingMineralThreeConcentration = startingMineralThreeConcentration;
@@ -44,63 +32,75 @@ public class Star {
         this.mineralThreeSurface = mineralThreeSurface;
     }
 
-    public Float getStartingMineralOneConcentration() {
+    public Star(double startingMineralOneConcentration, double startingMineralTwoConcentration, double startingMineralThreeConcentration, double mineralOneConcentration, double mineralTwoConcentration, double mineralThreeConcentration) {
+        this.startingMineralOneConcentration = startingMineralOneConcentration;
+        this.startingMineralTwoConcentration = startingMineralTwoConcentration;
+        this.startingMineralThreeConcentration = startingMineralThreeConcentration;
+        this.mineralOneConcentration = mineralOneConcentration;
+        this.mineralTwoConcentration = mineralTwoConcentration;
+        this.mineralThreeConcentration = mineralThreeConcentration;
+        mineralOneSurface = 0;
+        mineralTwoSurface = 0;
+        mineralThreeSurface = 0;
+    }
+
+    public double getStartingMineralOneConcentration() {
         return startingMineralOneConcentration;
     }
 
-    public Float getStartingMineralTwoConcentration() {
+    public double getStartingMineralTwoConcentration() {
         return startingMineralTwoConcentration;
     }
 
-    public Float getStartingMineralThreeConcentration() {
+    public double getStartingMineralThreeConcentration() {
         return startingMineralThreeConcentration;
     }
 
-    public Float getMineralOneConcentration() {
+    public double getMineralOneConcentration() {
         return mineralOneConcentration;
     }
 
-    public void setMineralOneConcentration(Float mineralOneConcentration) {
+    public void setMineralOneConcentration(double mineralOneConcentration) {
         this.mineralOneConcentration = mineralOneConcentration;
     }
 
-    public Float getMineralTwoConcentration() {
+    public double getMineralTwoConcentration() {
         return mineralTwoConcentration;
     }
 
-    public void setMineralTwoConcentration(Float mineralTwoConcentration) {
+    public void setMineralTwoConcentration(double mineralTwoConcentration) {
         this.mineralTwoConcentration = mineralTwoConcentration;
     }
 
-    public Float getMineralThreeConcentration() {
+    public double getMineralThreeConcentration() {
         return mineralThreeConcentration;
     }
 
-    public void setMineralThreeConcentration(Float mineralThreeConcentration) {
+    public void setMineralThreeConcentration(double mineralThreeConcentration) {
         this.mineralThreeConcentration = mineralThreeConcentration;
     }
 
-    public Float getMineralOneSurface() {
+    public double getMineralOneSurface() {
         return mineralOneSurface;
     }
 
-    public void setMineralOneSurface(Float mineralOneSurface) {
+    public void setMineralOneSurface(double mineralOneSurface) {
         this.mineralOneSurface = mineralOneSurface;
     }
 
-    public Float getMineralTwoSurface() {
+    public double getMineralTwoSurface() {
         return mineralTwoSurface;
     }
 
-    public void setMineralTwoSurface(Float mineralTwoSurface) {
+    public void setMineralTwoSurface(double mineralTwoSurface) {
         this.mineralTwoSurface = mineralTwoSurface;
     }
 
-    public Float getMineralThreeSurface() {
+    public double getMineralThreeSurface() {
         return mineralThreeSurface;
     }
 
-    public void setMineralThreeSurface(Float mineralThreeSurface) {
+    public void setMineralThreeSurface(double mineralThreeSurface) {
         this.mineralThreeSurface = mineralThreeSurface;
     }
 }
