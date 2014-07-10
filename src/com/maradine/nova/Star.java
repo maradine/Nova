@@ -5,6 +5,12 @@ package com.maradine.nova;
  */
 public class Star {
 
+    //coordinates in space
+    private double xCoord;
+    private double yCoord;
+
+    private String name;
+
     //starting mineral concentrations of intrinsic planet
     private final double startingMineralOneConcentration;
     private final double startingMineralTwoConcentration;
@@ -20,7 +26,10 @@ public class Star {
     private double mineralTwoSurface;
     private double mineralThreeSurface;
 
-    public Star(double startingMineralOneConcentration, double startingMineralTwoConcentration, double startingMineralThreeConcentration, double mineralOneConcentration, double mineralTwoConcentration, double mineralThreeConcentration, double mineralOneSurface, double mineralTwoSurface, double mineralThreeSurface) {
+    public Star(double xCoord, double yCoord, String name, double startingMineralOneConcentration, double startingMineralTwoConcentration, double startingMineralThreeConcentration, double mineralOneConcentration, double mineralTwoConcentration, double mineralThreeConcentration, double mineralOneSurface, double mineralTwoSurface, double mineralThreeSurface) {
+        this.xCoord = xCoord;
+        this.yCoord = yCoord;
+        this.name = name;
         this.startingMineralOneConcentration = startingMineralOneConcentration;
         this.startingMineralTwoConcentration = startingMineralTwoConcentration;
         this.startingMineralThreeConcentration = startingMineralThreeConcentration;
@@ -32,16 +41,40 @@ public class Star {
         this.mineralThreeSurface = mineralThreeSurface;
     }
 
-    public Star(double startingMineralOneConcentration, double startingMineralTwoConcentration, double startingMineralThreeConcentration, double mineralOneConcentration, double mineralTwoConcentration, double mineralThreeConcentration) {
+    public Star(double xCoord, double yCoord, String name, double startingMineralOneConcentration, double startingMineralTwoConcentration, double startingMineralThreeConcentration, double mineralOneConcentration, double mineralTwoConcentration, double mineralThreeConcentration) {
+        this.xCoord = xCoord;
+        this.yCoord = yCoord;
+        this.name = name;
         this.startingMineralOneConcentration = startingMineralOneConcentration;
         this.startingMineralTwoConcentration = startingMineralTwoConcentration;
         this.startingMineralThreeConcentration = startingMineralThreeConcentration;
         this.mineralOneConcentration = mineralOneConcentration;
         this.mineralTwoConcentration = mineralTwoConcentration;
         this.mineralThreeConcentration = mineralThreeConcentration;
-        mineralOneSurface = 0;
-        mineralTwoSurface = 0;
-        mineralThreeSurface = 0;
+    }
+
+    public double getxCoord() {
+        return xCoord;
+    }
+
+    public void setxCoord(double xCoord) {
+        this.xCoord = xCoord;
+    }
+
+    public double getyCoord() {
+        return yCoord;
+    }
+
+    public void setyCoord(double yCoord) {
+        this.yCoord = yCoord;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public double getStartingMineralOneConcentration() {
