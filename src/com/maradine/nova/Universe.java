@@ -1,3 +1,5 @@
+package com.maradine.nova;
+
 /**
  * Created by cdeibler on 7/10/14.
  */
