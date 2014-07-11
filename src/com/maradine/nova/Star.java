@@ -5,6 +5,8 @@ package com.maradine.nova;
  */
 public class Star {
 
+    private final int id;
+
     //coordinates in space
     private double xCoord;
     private double yCoord;
@@ -26,7 +28,8 @@ public class Star {
     private double mineralTwoSurface;
     private double mineralThreeSurface;
 
-    public Star(double xCoord, double yCoord, String name, double startingMineralOneConcentration, double startingMineralTwoConcentration, double startingMineralThreeConcentration, double mineralOneConcentration, double mineralTwoConcentration, double mineralThreeConcentration, double mineralOneSurface, double mineralTwoSurface, double mineralThreeSurface) {
+    public Star(int id, double xCoord, double yCoord, String name, double startingMineralOneConcentration, double startingMineralTwoConcentration, double startingMineralThreeConcentration, double mineralOneConcentration, double mineralTwoConcentration, double mineralThreeConcentration, double mineralOneSurface, double mineralTwoSurface, double mineralThreeSurface) {
+        this.id = id;
         this.xCoord = xCoord;
         this.yCoord = yCoord;
         this.name = name;
@@ -41,7 +44,8 @@ public class Star {
         this.mineralThreeSurface = mineralThreeSurface;
     }
 
-    public Star(double xCoord, double yCoord, String name, double startingMineralOneConcentration, double startingMineralTwoConcentration, double startingMineralThreeConcentration, double mineralOneConcentration, double mineralTwoConcentration, double mineralThreeConcentration) {
+    public Star(int id, double xCoord, double yCoord, String name, double startingMineralOneConcentration, double startingMineralTwoConcentration, double startingMineralThreeConcentration, double mineralOneConcentration, double mineralTwoConcentration, double mineralThreeConcentration) {
+        this.id = id;
         this.xCoord = xCoord;
         this.yCoord = yCoord;
         this.name = name;
@@ -51,6 +55,10 @@ public class Star {
         this.mineralOneConcentration = mineralOneConcentration;
         this.mineralTwoConcentration = mineralTwoConcentration;
         this.mineralThreeConcentration = mineralThreeConcentration;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public double getxCoord() {

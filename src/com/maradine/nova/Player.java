@@ -7,10 +7,12 @@ public class Player {
 
     private final int id;
     private final String name;
+    private final int owner;
 
-    public Player(int id, String name) {
+    public Player(int id, String name, int owner) {
         this.id = id;
         this.name = name;
+        this.owner = owner;
     }
 
     public int getId() {
@@ -20,4 +22,9 @@ public class Player {
     public String getName() {
         return name;
     }
+
+    public int getOwner() {
+        return owner;
+    }
+
 }
