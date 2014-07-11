@@ -8,20 +8,26 @@ public class Fleet {
     //book keeping
     private final int id;
     private String name;
+    private final int owner;
 
     //position in space
     private double xCoord;
     private double yCoord;
 
-    public Fleet(int id, String name, double xCoord, double yCoord) {
+    public Fleet(int id, String name, int owner, double xCoord, double yCoord) {
         this.id = id;
         this.name = name;
+        this.owner = owner;
         this.xCoord = xCoord;
         this.yCoord = yCoord;
     }
 
     public int getId() {
         return id;
+    }
+
+    public int getOwner() {
+        return owner;
     }
 
     public String getName() {

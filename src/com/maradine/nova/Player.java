@@ -7,12 +7,12 @@ public class Player {
 
     private final int id;
     private final String name;
-    private final int owner;
 
-    public Player(int id, String name, int owner) {
+
+    public Player(int id, String name) {
         this.id = id;
         this.name = name;
-        this.owner = owner;
+
     }
 
     public int getId() {
@@ -23,8 +23,5 @@ public class Player {
         return name;
     }
 
-    public int getOwner() {
-        return owner;
-    }
 
 }
