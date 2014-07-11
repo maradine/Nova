@@ -30,5 +30,23 @@ public class Universe {
         stars = new LinkedHashMap<Integer, Star>();
     }
 
+    public HashMap<Integer, Player> getPlayers() {
+        return players;
+    }
 
+    public HashMap<Integer, Fleet> getFleets() {
+        return fleets;
+    }
+
+    public HashMap<Integer, Star> getStars() {
+        return stars;
+    }
+
+    public int getxSize() {
+        return xSize;
+    }
+
+    public int getySize() {
+        return ySize;
+    }
 }
