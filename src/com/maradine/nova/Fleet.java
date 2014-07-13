@@ -13,19 +13,17 @@ public class Fleet {
     private final int owner;
 
     //position in space
-    private double xCoord;
-    private double yCoord;
+    private Coordinates location;
 
     //orders
     private FleetOrder zeroOrder;
     private LinkedList<FleetOrderTuple> orders;
 
-    public Fleet(int id, String name, int owner, double xCoord, double yCoord) {
+    public Fleet(int id, String name, int owner, Coordinates location) {
         this.id = id;
         this.name = name;
         this.owner = owner;
-        this.xCoord = xCoord;
-        this.yCoord = yCoord;
+        this.location = location;
         this.zeroOrder = null;
         this.orders = new LinkedList<FleetOrderTuple>();
     }
@@ -46,22 +44,6 @@ public class Fleet {
         this.name = name;
     }
 
-    public double getxCoord() {
-        return xCoord;
-    }
-
-    public void setxCoord(double xCoord) {
-        this.xCoord = xCoord;
-    }
-
-    public double getyCoord() {
-        return yCoord;
-    }
-
-    public void setyCoord(double yCoord) {
-        this.yCoord = yCoord;
-    }
-
     public FleetOrder getZeroOrder() {
         return zeroOrder;
     }
@@ -76,5 +58,13 @@ public class Fleet {
 
     public void setOrders(LinkedList<FleetOrderTuple> orders) {
         this.orders = orders;
+    }
+
+    public Coordinates getCoordinates() {
+        return location;
+    }
+
+    public void setLoc(Coordinates location) {
+        this.location = location;
     }
 }

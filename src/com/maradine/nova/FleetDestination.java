@@ -4,30 +4,20 @@ package com.maradine.nova;
  * Created by maradine on 7/11/14.
  */
 public class FleetDestination {
-    private double xCoord;
-    private double yCoord;
+    private Coordinates location;
     private int speed;
 
-    public FleetDestination(double xCoord, double yCoord, int speed) {
-        this.xCoord = xCoord;
-        this.yCoord = yCoord;
+    public FleetDestination(Coordinates location, int speed) {
+        this.location = location;
         this.speed = speed;
     }
 
-    public double getxCoord() {
-        return xCoord;
+    public Coordinates getLocation() {
+        return location;
     }
 
-    public void setxCoord(double xCoord) {
-        this.xCoord = xCoord;
-    }
-
-    public double getyCoord() {
-        return yCoord;
-    }
-
-    public void setyCoord(double yCoord) {
-        this.yCoord = yCoord;
+    public void setLocation(Coordinates location) {
+        this.location = location;
     }
 
     public int getSpeed() {

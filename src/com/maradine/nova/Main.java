@@ -7,10 +7,19 @@ public class Main {
 
         Universe uni = new Universe(500,500);
 
-
-
+        for (int i=0; i<10; i++) {
+            uni.addStar(Star.getRandomDebugStar());
+        }
 
         uni.dumpUniverse();
+
+        for (Star s : uni.getStars().values()){
+            Coordinates sc = s.getCoordinates();
+            for (Star o : uni.getStars().values()) {
+                Coordinates oc = o.getCoordinates();
+                System.out.println(s.getName()+" IS "+sc.distanceFrom(oc)+" FROM "+o.getName());
+            }
+        }
 
     }
 

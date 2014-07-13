@@ -50,8 +50,13 @@ public class Universe {
         return ySize;
     }
 
+    public void addStar(Star s) {
+        stars.put(s.getId(),s);
+    }
+
     public void dumpUniverse() {
         System.out.println("==DUMPING UNIVERSE TO CONSOLE==");
+        System.out.println("UNIVERSE IS "+xSize+" BY "+ySize);
         int numPlayers = players.size();
         System.out.println("UNIVERSE HAS " + numPlayers + " PLAYERS");
         int numFleets = fleets.size();
@@ -59,5 +64,8 @@ public class Universe {
         int numStars = stars.size();
         System.out.println("UNIVERSE HAS " + numStars + " STARS");
 
+        for (int i : stars.keySet()){
+            stars.get(i).dumpStar();
+        }
     }
 }

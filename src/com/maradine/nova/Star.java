@@ -10,30 +10,28 @@ public class Star {
     private final int id;
 
     //coordinates in space
-    private double xCoord;
-    private double yCoord;
+    private Coordinates location;
 
     private String name;
 
     //starting mineral concentrations of intrinsic planet
-    private final double startingMineralOneConcentration;
-    private final double startingMineralTwoConcentration;
-    private final double startingMineralThreeConcentration;
+    private final int startingMineralOneConcentration;
+    private final int startingMineralTwoConcentration;
+    private final int startingMineralThreeConcentration;
 
     //current mineral concentrations of intrinsic planet
-    private double mineralOneConcentration;
-    private double mineralTwoConcentration;
-    private double mineralThreeConcentration;
+    private int mineralOneConcentration;
+    private int mineralTwoConcentration;
+    private int mineralThreeConcentration;
 
     //surface minerals on on intrinsic planet
-    private double mineralOneSurface;
-    private double mineralTwoSurface;
-    private double mineralThreeSurface;
+    private int mineralOneSurface;
+    private int mineralTwoSurface;
+    private int mineralThreeSurface;
 
-    public Star(int id, double xCoord, double yCoord, String name, double startingMineralOneConcentration, double startingMineralTwoConcentration, double startingMineralThreeConcentration, double mineralOneConcentration, double mineralTwoConcentration, double mineralThreeConcentration, double mineralOneSurface, double mineralTwoSurface, double mineralThreeSurface) {
+    public Star(int id, Coordinates location, String name, int startingMineralOneConcentration, int startingMineralTwoConcentration, int startingMineralThreeConcentration, int mineralOneConcentration, int mineralTwoConcentration, int mineralThreeConcentration, int mineralOneSurface, int mineralTwoSurface, int mineralThreeSurface) {
         this.id = id;
-        this.xCoord = xCoord;
-        this.yCoord = yCoord;
+        this.location = location;
         this.name = name;
         this.startingMineralOneConcentration = startingMineralOneConcentration;
         this.startingMineralTwoConcentration = startingMineralTwoConcentration;
@@ -46,10 +44,9 @@ public class Star {
         this.mineralThreeSurface = mineralThreeSurface;
     }
 
-    public Star(int id, double xCoord, double yCoord, String name, double startingMineralOneConcentration, double startingMineralTwoConcentration, double startingMineralThreeConcentration) {
+    public Star(int id, Coordinates location, String name, int startingMineralOneConcentration, int startingMineralTwoConcentration, int startingMineralThreeConcentration) {
         this.id = id;
-        this.xCoord = xCoord;
-        this.yCoord = yCoord;
+        this.location = location;
         this.name = name;
         this.startingMineralOneConcentration = startingMineralOneConcentration;
         this.startingMineralTwoConcentration = startingMineralTwoConcentration;
@@ -66,20 +63,12 @@ public class Star {
         return id;
     }
 
-    public double getxCoord() {
-        return xCoord;
+    public Coordinates getCoordinates() {
+        return location;
     }
 
-    public void setxCoord(double xCoord) {
-        this.xCoord = xCoord;
-    }
-
-    public double getyCoord() {
-        return yCoord;
-    }
-
-    public void setyCoord(double yCoord) {
-        this.yCoord = yCoord;
+    public void setLocation(Coordinates location) {
+        this.location = location;
     }
 
     public String getName() {
@@ -90,88 +79,89 @@ public class Star {
         this.name = name;
     }
 
-    public double getStartingMineralOneConcentration() {
+    public int getStartingMineralOneConcentration() {
         return startingMineralOneConcentration;
     }
 
-    public double getStartingMineralTwoConcentration() {
+    public int getStartingMineralTwoConcentration() {
         return startingMineralTwoConcentration;
     }
 
-    public double getStartingMineralThreeConcentration() {
+    public int getStartingMineralThreeConcentration() {
         return startingMineralThreeConcentration;
     }
 
-    public double getMineralOneConcentration() {
+    public int getMineralOneConcentration() {
         return mineralOneConcentration;
     }
 
-    public void setMineralOneConcentration(double mineralOneConcentration) {
+    public void setMineralOneConcentration(int mineralOneConcentration) {
         this.mineralOneConcentration = mineralOneConcentration;
     }
 
-    public double getMineralTwoConcentration() {
+    public int getMineralTwoConcentration() {
         return mineralTwoConcentration;
     }
 
-    public void setMineralTwoConcentration(double mineralTwoConcentration) {
+    public void setMineralTwoConcentration(int mineralTwoConcentration) {
         this.mineralTwoConcentration = mineralTwoConcentration;
     }
 
-    public double getMineralThreeConcentration() {
+    public int getMineralThreeConcentration() {
         return mineralThreeConcentration;
     }
 
-    public void setMineralThreeConcentration(double mineralThreeConcentration) {
+    public void setMineralThreeConcentration(int mineralThreeConcentration) {
         this.mineralThreeConcentration = mineralThreeConcentration;
     }
 
-    public double getMineralOneSurface() {
+    public int getMineralOneSurface() {
         return mineralOneSurface;
     }
 
-    public void setMineralOneSurface(double mineralOneSurface) {
+    public void setMineralOneSurface(int mineralOneSurface) {
         this.mineralOneSurface = mineralOneSurface;
     }
 
-    public double getMineralTwoSurface() {
+    public int getMineralTwoSurface() {
         return mineralTwoSurface;
     }
 
-    public void setMineralTwoSurface(double mineralTwoSurface) {
+    public void setMineralTwoSurface(int mineralTwoSurface) {
         this.mineralTwoSurface = mineralTwoSurface;
     }
 
-    public double getMineralThreeSurface() {
+    public int getMineralThreeSurface() {
         return mineralThreeSurface;
     }
 
-    public void setMineralThreeSurface(double mineralThreeSurface) {
+    public void setMineralThreeSurface(int mineralThreeSurface) {
         this.mineralThreeSurface = mineralThreeSurface;
     }
 
     public static Star getRandomDebugStar() {
         Random rand = new Random();
         int id = rand.nextInt();
-        double x = rand.nextDouble()*1000;
-        double y = rand.nextDouble()*1000;
+        int x = rand.nextInt(1000);
+        int y = rand.nextInt(1000);
+        Coordinates loc = new Coordinates(x,y);
         String n = "BLAH";
-        double m1sc = rand.nextDouble()*1000;
-        double m2sc = rand.nextDouble()*1000;
-        double m3sc = rand.nextDouble()*1000;
+        int m1sc = rand.nextInt(1000);
+        int m2sc = rand.nextInt(1000);
+        int m3sc = rand.nextInt(1000);
 
-        Star s = new Star(id,x,y,n,m1sc,m2sc,m3sc);
+        Star s = new Star(id,loc,n,m1sc,m2sc,m3sc);
         return s;
 
     }
 
     public void dumpStar() {
-        System.out.println("==DUMPING STAR TO CONSOLE==");
-        System.out.println("COORDINATES: x:"+xCoord+" y:"+yCoord);
-        System.out.println("NAME: "+name);
-        System.out.println("MINERAL 1: "+startingMineralOneConcentration+" SC " +mineralOneConcentration+" MC "+mineralOneSurface+ "SM");
-        System.out.println("MINERAL 2: "+startingMineralTwoConcentration+" SC " +mineralTwoConcentration+" MC "+mineralTwoSurface+ "SM");
-        System.out.println("MINERAL 3: "+startingMineralThreeConcentration+" SC " +mineralThreeConcentration+" MC "+mineralThreeSurface+ "SM");
+        System.out.println("\t==DUMPING STAR TO CONSOLE==");
+        System.out.println("\tID: "+id+" NAME: "+name);
+        System.out.println("\tCOORDINATES: x:"+ location.getX()+" y:"+ location.getY());
+        System.out.println("\tMINERAL 1: "+startingMineralOneConcentration+" SC " +mineralOneConcentration+" MC "+mineralOneSurface+ " SM");
+        System.out.println("\tMINERAL 2: "+startingMineralTwoConcentration+" SC " +mineralTwoConcentration+" MC "+mineralTwoSurface+ " SM");
+        System.out.println("\tMINERAL 3: "+startingMineralThreeConcentration+" SC " +mineralThreeConcentration+" MC "+mineralThreeSurface+ " SM");
     }
 
 }
