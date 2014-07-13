@@ -1,7 +1,7 @@
 package com.maradine.nova;
+
 import java.util.HashMap;
 import java.util.LinkedHashMap;
-import java.util.LinkedList;
 
 /**
  * Created by cdeibler on 7/10/14.
@@ -48,5 +48,16 @@ public class Universe {
 
     public int getySize() {
         return ySize;
+    }
+
+    public void dumpUniverse() {
+        System.out.println("==DUMPING UNIVERSE TO CONSOLE==");
+        int numPlayers = players.size();
+        System.out.println("UNIVERSE HAS " + numPlayers + " PLAYERS");
+        int numFleets = fleets.size();
+        System.out.println("UNIVERSE HAS " + numFleets + " FLEETS");
+        int numStars = stars.size();
+        System.out.println("UNIVERSE HAS " + numStars + " STARS");
+
     }
 }

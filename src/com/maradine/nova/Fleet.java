@@ -18,7 +18,7 @@ public class Fleet {
 
     //orders
     private FleetOrder zeroOrder;
-    private LinkedList<FleetTuple> orders;
+    private LinkedList<FleetOrderTuple> orders;
 
     public Fleet(int id, String name, int owner, double xCoord, double yCoord) {
         this.id = id;
@@ -27,7 +27,7 @@ public class Fleet {
         this.xCoord = xCoord;
         this.yCoord = yCoord;
         this.zeroOrder = null;
-        this.orders = new LinkedList<FleetTuple>();
+        this.orders = new LinkedList<FleetOrderTuple>();
     }
 
     public int getId() {
@@ -70,11 +70,11 @@ public class Fleet {
         this.zeroOrder = zeroOrder;
     }
 
-    public LinkedList<FleetTuple> getOrders() {
+    public LinkedList<FleetOrderTuple> getOrders() {
         return orders;
     }
 
-    public void setOrders(LinkedList<FleetTuple> orders) {
+    public void setOrders(LinkedList<FleetOrderTuple> orders) {
         this.orders = orders;
     }
 }

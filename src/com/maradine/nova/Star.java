@@ -1,5 +1,7 @@
 package com.maradine.nova;
 
+import java.util.Random;
+
 /**
  * Created by cdeibler on 7/10/14.
  */
@@ -44,7 +46,7 @@ public class Star {
         this.mineralThreeSurface = mineralThreeSurface;
     }
 
-    public Star(int id, double xCoord, double yCoord, String name, double startingMineralOneConcentration, double startingMineralTwoConcentration, double startingMineralThreeConcentration, double mineralOneConcentration, double mineralTwoConcentration, double mineralThreeConcentration) {
+    public Star(int id, double xCoord, double yCoord, String name, double startingMineralOneConcentration, double startingMineralTwoConcentration, double startingMineralThreeConcentration) {
         this.id = id;
         this.xCoord = xCoord;
         this.yCoord = yCoord;
@@ -52,9 +54,12 @@ public class Star {
         this.startingMineralOneConcentration = startingMineralOneConcentration;
         this.startingMineralTwoConcentration = startingMineralTwoConcentration;
         this.startingMineralThreeConcentration = startingMineralThreeConcentration;
-        this.mineralOneConcentration = mineralOneConcentration;
-        this.mineralTwoConcentration = mineralTwoConcentration;
-        this.mineralThreeConcentration = mineralThreeConcentration;
+        this.mineralOneConcentration = startingMineralOneConcentration;
+        this.mineralTwoConcentration = startingMineralTwoConcentration;
+        this.mineralThreeConcentration = startingMineralThreeConcentration;
+        this.mineralOneSurface=0;
+        this.mineralTwoSurface=0;
+        this.mineralThreeSurface=0;
     }
 
     public int getId() {
@@ -144,4 +149,29 @@ public class Star {
     public void setMineralThreeSurface(double mineralThreeSurface) {
         this.mineralThreeSurface = mineralThreeSurface;
     }
+
+    public static Star getRandomDebugStar() {
+        Random rand = new Random();
+        int id = rand.nextInt();
+        double x = rand.nextDouble()*1000;
+        double y = rand.nextDouble()*1000;
+        String n = "BLAH";
+        double m1sc = rand.nextDouble()*1000;
+        double m2sc = rand.nextDouble()*1000;
+        double m3sc = rand.nextDouble()*1000;
+
+        Star s = new Star(id,x,y,n,m1sc,m2sc,m3sc);
+        return s;
+
+    }
+
+    public void dumpStar() {
+        System.out.println("==DUMPING STAR TO CONSOLE==");
+        System.out.println("COORDINATES: x:"+xCoord+" y:"+yCoord);
+        System.out.println("NAME: "+name);
+        System.out.println("MINERAL 1: "+startingMineralOneConcentration+" SC " +mineralOneConcentration+" MC "+mineralOneSurface+ "SM");
+        System.out.println("MINERAL 2: "+startingMineralTwoConcentration+" SC " +mineralTwoConcentration+" MC "+mineralTwoSurface+ "SM");
+        System.out.println("MINERAL 3: "+startingMineralThreeConcentration+" SC " +mineralThreeConcentration+" MC "+mineralThreeSurface+ "SM");
+    }
+
 }
