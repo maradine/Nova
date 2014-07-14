@@ -1,6 +1,7 @@
 package com.maradine.nova;
 
 import java.util.LinkedList;
+import java.util.Random;
 
 /**
  * Created by cdeibler on 7/10/14.
@@ -67,4 +68,23 @@ public class Fleet {
     public void setLoc(Coordinates location) {
         this.location = location;
     }
+
+    public static Fleet getRandomDebugFleet() {
+        Random rand = new Random();
+        int id = rand.nextInt();
+        int x = rand.nextInt(1000);
+        int y = rand.nextInt(1000);
+        Coordinates loc = new Coordinates(x,y);
+        String n = "BLAH";
+        int o = rand.nextInt(1000);
+        Fleet f = new Fleet(id,n, o, loc);
+        return f;
+    }
+
+    public void dumpFleet() {
+        System.out.println("\t==DUMPING FLEET TO CONSOLE==");
+        System.out.println("\tID: "+id+" NAME: "+name+" OWNER: "+owner);
+        System.out.println("\tCOORDINATES: x:"+ location.getX()+" y:"+ location.getY());
+    }
+
 }
