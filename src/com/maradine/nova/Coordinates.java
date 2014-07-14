@@ -3,6 +3,8 @@ package com.maradine.nova;
 /**
  * Created by maradine on 7/13/14.
  */
+
+@Deprecated
 public class Coordinates {
     private int x;
     private int y;

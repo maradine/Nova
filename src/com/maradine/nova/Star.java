@@ -1,5 +1,6 @@
 package com.maradine.nova;
 
+import java.awt.Point;
 import java.util.Random;
 
 /**
@@ -9,8 +10,8 @@ public class Star {
 
     private final int id;
 
-    //coordinates in space
-    private Coordinates location;
+    //Point in space
+    private Point location;
 
     private String name;
 
@@ -29,7 +30,7 @@ public class Star {
     private int mineralTwoSurface;
     private int mineralThreeSurface;
 
-    public Star(int id, Coordinates location, String name, int startingMineralOneConcentration, int startingMineralTwoConcentration, int startingMineralThreeConcentration, int mineralOneConcentration, int mineralTwoConcentration, int mineralThreeConcentration, int mineralOneSurface, int mineralTwoSurface, int mineralThreeSurface) {
+    public Star(int id, Point location, String name, int startingMineralOneConcentration, int startingMineralTwoConcentration, int startingMineralThreeConcentration, int mineralOneConcentration, int mineralTwoConcentration, int mineralThreeConcentration, int mineralOneSurface, int mineralTwoSurface, int mineralThreeSurface) {
         this.id = id;
         this.location = location;
         this.name = name;
@@ -44,7 +45,7 @@ public class Star {
         this.mineralThreeSurface = mineralThreeSurface;
     }
 
-    public Star(int id, Coordinates location, String name, int startingMineralOneConcentration, int startingMineralTwoConcentration, int startingMineralThreeConcentration) {
+    public Star(int id, Point location, String name, int startingMineralOneConcentration, int startingMineralTwoConcentration, int startingMineralThreeConcentration) {
         this.id = id;
         this.location = location;
         this.name = name;
@@ -63,11 +64,11 @@ public class Star {
         return id;
     }
 
-    public Coordinates getCoordinates() {
+    public Point getPoint() {
         return location;
     }
 
-    public void setLocation(Coordinates location) {
+    public void setLocation(Point location) {
         this.location = location;
     }
 
@@ -144,7 +145,7 @@ public class Star {
         int id = rand.nextInt();
         int x = rand.nextInt(1000);
         int y = rand.nextInt(1000);
-        Coordinates loc = new Coordinates(x,y);
+        Point loc = new Point(x,y);
         String n = "BLAH";
         int m1sc = rand.nextInt(1000);
         int m2sc = rand.nextInt(1000);
@@ -158,7 +159,7 @@ public class Star {
     public void dumpStar() {
         System.out.println("\t==DUMPING STAR TO CONSOLE==");
         System.out.println("\tID: "+id+" NAME: "+name);
-        System.out.println("\tCOORDINATES: x:"+ location.getX()+" y:"+ location.getY());
+        System.out.println("\tPoint: x:"+ location.getX()+" y:"+ location.getY());
         System.out.println("\tMINERAL 1: "+startingMineralOneConcentration+" SC " +mineralOneConcentration+" MC "+mineralOneSurface+ " SM");
         System.out.println("\tMINERAL 2: "+startingMineralTwoConcentration+" SC " +mineralTwoConcentration+" MC "+mineralTwoSurface+ " SM");
         System.out.println("\tMINERAL 3: "+startingMineralThreeConcentration+" SC " +mineralThreeConcentration+" MC "+mineralThreeSurface+ " SM");

@@ -17,15 +17,6 @@ public class Main {
 
         uni.dumpUniverse();
 
-        /* distance calculation tester
-        for (Star s : uni.getStars().values()){
-            Coordinates sc = s.getCoordinates();
-            for (Star o : uni.getStars().values()) {
-                Coordinates oc = o.getCoordinates();
-                System.out.println(s.getName()+" IS "+sc.distanceFrom(oc)+" FROM "+o.getName());
-            }
-        } */
-
     }
 
 }

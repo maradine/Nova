@@ -1,5 +1,6 @@
 package com.maradine.nova;
 
+import java.awt.Point;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
@@ -15,13 +16,13 @@ public class Fleet {
     private final int owner;
 
     //position in space
-    private Coordinates location;
+    private Point location;
 
     //orders
     private FleetOrder zeroOrder;
     private List<FleetOrderTuple> orders;
 
-    public Fleet(int id, String name, int owner, Coordinates location) {
+    public Fleet(int id, String name, int owner, Point location) {
         this.id = id;
         this.name = name;
         this.owner = owner;
@@ -54,7 +55,7 @@ public class Fleet {
         this.zeroOrder = zeroOrder;
     }
 
-    public LinkedList<FleetOrderTuple> getOrders() {
+    public List<FleetOrderTuple> getOrders() {
         return orders;
     }
 
@@ -62,11 +63,11 @@ public class Fleet {
         this.orders = orders;
     }
 
-    public Coordinates getCoordinates() {
+    public Point getCoordinates() {
         return location;
     }
 
-    public void setLoc(Coordinates location) {
+    public void setLoc(Point location) {
         this.location = location;
     }
 
@@ -75,7 +76,7 @@ public class Fleet {
         int id = rand.nextInt();
         int x = rand.nextInt(1000);
         int y = rand.nextInt(1000);
-        Coordinates loc = new Coordinates(x,y);
+        Point loc = new Point(x,y);
         String n = "BLAH";
         int o = rand.nextInt(1000);
         Fleet f = new Fleet(id,n, o, loc);

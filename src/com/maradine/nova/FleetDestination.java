@@ -1,22 +1,24 @@
 package com.maradine.nova;
 
+import java.awt.Point;
+
 /**
  * Created by maradine on 7/11/14.
  */
 public class FleetDestination {
-    private Coordinates location;
+    private Point location;
     private int speed;
 
-    public FleetDestination(Coordinates location, int speed) {
+    public FleetDestination(Point location, int speed) {
         this.location = location;
         this.speed = speed;
     }
 
-    public Coordinates getLocation() {
+    public Point getLocation() {
         return location;
     }
 
-    public void setLocation(Coordinates location) {
+    public void setLocation(Point location) {
         this.location = location;
     }
 
