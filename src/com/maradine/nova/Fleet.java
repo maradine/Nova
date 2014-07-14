@@ -1,6 +1,7 @@
 package com.maradine.nova;
 
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Random;
 
 /**
@@ -18,7 +19,7 @@ public class Fleet {
 
     //orders
     private FleetOrder zeroOrder;
-    private LinkedList<FleetOrderTuple> orders;
+    private List<FleetOrderTuple> orders;
 
     public Fleet(int id, String name, int owner, Coordinates location) {
         this.id = id;

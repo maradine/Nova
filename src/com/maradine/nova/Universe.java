@@ -1,7 +1,7 @@
 package com.maradine.nova;
 
 import java.util.HashMap;
-import java.util.LinkedHashMap;
+import java.util.Map;
 
 /**
  * Created by cdeibler on 7/10/14.
@@ -9,15 +9,15 @@ import java.util.LinkedHashMap;
 public class Universe {
 
     //collection of players
-    private final HashMap<Integer, Player> players;
+    private final Map<Integer, Player> players;
 
     //collection of fleets
-    private final HashMap<Integer, Fleet> fleets;
+    private final Map<Integer, Fleet> fleets;
 
     //collection of stars
-    private final HashMap<Integer, Star> stars;
+    private final Map<Integer, Star> stars;
 
-    //how big is the universe (standard euclidian coords, origin bottom left)
+    //how big is the universe (standard euclidean coords, origin bottom left)
     private final int xSize;
     private final int ySize;
 
@@ -27,18 +27,18 @@ public class Universe {
         this.ySize = ySize;
         players = new HashMap<Integer, Player>();
         fleets = new HashMap<Integer, Fleet>();
-        stars = new LinkedHashMap<Integer, Star>();
+        stars = new HashMap<Integer, Star>();
     }
 
-    public HashMap<Integer, Player> getPlayers() {
+    public Map<Integer, Player> getPlayers() {
         return players;
     }
 
-    public HashMap<Integer, Fleet> getFleets() {
+    public Map<Integer, Fleet> getFleets() {
         return fleets;
     }
 
-    public HashMap<Integer, Star> getStars() {
+    public Map<Integer, Star> getStars() {
         return stars;
     }
 
