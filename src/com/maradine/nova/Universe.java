@@ -54,6 +54,8 @@ public class Universe {
         stars.put(s.getId(),s);
     }
 
+    public void addFleet(Fleet f) {fleets.put(f.getId(),f);}
+
     public void dumpUniverse() {
         System.out.println("==DUMPING UNIVERSE TO CONSOLE==");
         System.out.println("UNIVERSE IS "+xSize+" BY "+ySize);
@@ -66,6 +68,10 @@ public class Universe {
 
         for (int i : stars.keySet()){
             stars.get(i).dumpStar();
+        }
+
+        for (int i : fleets.keySet()){
+            fleets.get(i).dumpFleet();
         }
     }
 }

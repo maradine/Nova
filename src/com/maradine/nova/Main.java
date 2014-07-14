@@ -11,6 +11,10 @@ public class Main {
             uni.addStar(Star.getRandomDebugStar());
         }
 
+        for (int i=0; i<10; i++) {
+            uni.addFleet(Fleet.getRandomDebugFleet());
+        }
+
         uni.dumpUniverse();
 
         /* distance calculation tester
