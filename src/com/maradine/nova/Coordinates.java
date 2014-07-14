@@ -41,5 +41,29 @@ public class Coordinates {
         return Math.sqrt(c2);
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (o == null) {
+            return false;
+        } else if (!(o instanceof Coordinates)) {
+            return false;
+        } else if (o == this) {
+            return true;
+        }
+        Coordinates oc = (Coordinates) o;
+        if (oc.getX() == this.getX() && oc.getY() == this.getY()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 1;
+        hash = hash * 37 * x;
+        hash = hash * 19 * y;
+        return hash;
+    }
 
 }
