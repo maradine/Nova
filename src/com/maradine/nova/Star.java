@@ -11,9 +11,11 @@ public class Star {
     private final int id;
 
     //Point in space
-    private Point location;
+    private final Point location;
 
     private String name;
+
+    private int owner;
 
     //starting mineral concentrations of intrinsic planet
     private final int startingMineralOneConcentration;
@@ -30,10 +32,11 @@ public class Star {
     private int mineralTwoSurface;
     private int mineralThreeSurface;
 
-    public Star(int id, Point location, String name, int startingMineralOneConcentration, int startingMineralTwoConcentration, int startingMineralThreeConcentration, int mineralOneConcentration, int mineralTwoConcentration, int mineralThreeConcentration, int mineralOneSurface, int mineralTwoSurface, int mineralThreeSurface) {
+    public Star(int id, Point location, String name, int owner, int startingMineralOneConcentration, int startingMineralTwoConcentration, int startingMineralThreeConcentration, int mineralOneConcentration, int mineralTwoConcentration, int mineralThreeConcentration, int mineralOneSurface, int mineralTwoSurface, int mineralThreeSurface) {
         this.id = id;
         this.location = location;
         this.name = name;
+        this.owner = owner;
         this.startingMineralOneConcentration = startingMineralOneConcentration;
         this.startingMineralTwoConcentration = startingMineralTwoConcentration;
         this.startingMineralThreeConcentration = startingMineralThreeConcentration;
@@ -45,10 +48,11 @@ public class Star {
         this.mineralThreeSurface = mineralThreeSurface;
     }
 
-    public Star(int id, Point location, String name, int startingMineralOneConcentration, int startingMineralTwoConcentration, int startingMineralThreeConcentration) {
+    public Star(int id, Point location, String name, int owner, int startingMineralOneConcentration, int startingMineralTwoConcentration, int startingMineralThreeConcentration) {
         this.id = id;
         this.location = location;
         this.name = name;
+        this.owner = owner;
         this.startingMineralOneConcentration = startingMineralOneConcentration;
         this.startingMineralTwoConcentration = startingMineralTwoConcentration;
         this.startingMineralThreeConcentration = startingMineralThreeConcentration;
@@ -68,16 +72,20 @@ public class Star {
         return location;
     }
 
-    public void setLocation(Point location) {
-        this.location = location;
-    }
-
     public String getName() {
         return name;
     }
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public int getOwner() {
+        return owner;
+    }
+
+    public void setOwner(int owner) {
+        this.owner = owner;
     }
 
     public int getStartingMineralOneConcentration() {
@@ -145,20 +153,21 @@ public class Star {
         int id = rand.nextInt();
         int x = rand.nextInt(1000);
         int y = rand.nextInt(1000);
+        int o = rand.nextInt(100);
         Point loc = new Point(x,y);
         String n = "BLAH";
         int m1sc = rand.nextInt(1000);
         int m2sc = rand.nextInt(1000);
         int m3sc = rand.nextInt(1000);
 
-        Star s = new Star(id,loc,n,m1sc,m2sc,m3sc);
+        Star s = new Star(id,loc,n,o,m1sc,m2sc,m3sc);
         return s;
 
     }
 
     public void dumpStar() {
         System.out.println("\t==DUMPING STAR TO CONSOLE==");
-        System.out.println("\tID: "+id+" NAME: "+name);
+        System.out.println("\tID: "+id+" NAME: "+name + "OWNER: "+owner);
         System.out.println("\tPoint: x:"+ location.getX()+" y:"+ location.getY());
         System.out.println("\tMINERAL 1: "+startingMineralOneConcentration+" SC " +mineralOneConcentration+" MC "+mineralOneSurface+ " SM");
         System.out.println("\tMINERAL 2: "+startingMineralTwoConcentration+" SC " +mineralTwoConcentration+" MC "+mineralTwoSurface+ " SM");

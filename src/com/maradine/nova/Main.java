@@ -1,5 +1,7 @@
 package com.maradine.nova;
 
+import com.thoughtworks.xstream.XStream;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -16,6 +18,10 @@ public class Main {
         }
 
         uni.dumpUniverse();
+
+        XStream xstream = new XStream();
+
+        System.out.println(xstream.toXML(uni));
 
     }
 

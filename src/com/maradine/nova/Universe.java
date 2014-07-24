@@ -8,8 +8,7 @@ import java.util.Map;
  */
 public class Universe {
 
-    //collection of players
-    private final Map<Integer, Player> players;
+
 
     //collection of fleets
     private final Map<Integer, Fleet> fleets;
@@ -25,13 +24,8 @@ public class Universe {
     public Universe(int xSize, int ySize) {
         this.xSize = xSize;
         this.ySize = ySize;
-        players = new HashMap<Integer, Player>();
         fleets = new HashMap<Integer, Fleet>();
         stars = new HashMap<Integer, Star>();
-    }
-
-    public Map<Integer, Player> getPlayers() {
-        return players;
     }
 
     public Map<Integer, Fleet> getFleets() {
@@ -59,8 +53,6 @@ public class Universe {
     public void dumpUniverse() {
         System.out.println("==DUMPING UNIVERSE TO CONSOLE==");
         System.out.println("UNIVERSE IS "+xSize+" BY "+ySize);
-        int numPlayers = players.size();
-        System.out.println("UNIVERSE HAS " + numPlayers + " PLAYERS");
         int numFleets = fleets.size();
         System.out.println("UNIVERSE HAS " + numFleets + " FLEETS");
         int numStars = stars.size();

@@ -23,5 +23,10 @@ public class Player {
         return name;
     }
 
+    public void dumpPlayer() {
+        System.out.println("\t==DUMPING PLAYER TO CONSOLE==");
+        System.out.println("\tID: "+id+" NAME: "+name);
+    }
+
 
 }
